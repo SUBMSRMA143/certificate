@@ -5,7 +5,7 @@ const Nitya = () => {
         <div>
             <img className='ankit' src={nitya} alt="ankit" />
             <h1>Hydroponics Farming certificate</h1>
-            <h2>Submitted by: Nityanand Kumar Singh</h2>
+            <h2>Certified to: Nityanand Kumar Singh</h2>
         </div>
     )
 }

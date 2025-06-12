@@ -5,7 +5,7 @@ const Ankit = () => {
         <div>
             <img className='ankit' src={ankit} alt="ankit" />
             <h1>Saffron cultivation certificate</h1>
-            <h2>Submitted by: Ankit</h2>
+            <h2>Certified to: Ankit</h2>
         </div>
     )
 }
