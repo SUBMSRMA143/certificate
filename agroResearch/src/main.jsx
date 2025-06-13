@@ -13,7 +13,7 @@ import Nitya from './components/Nitya.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Ankit />,
+    element: <App />,
     children: [
       {
         path: "/ankit-certificate",
