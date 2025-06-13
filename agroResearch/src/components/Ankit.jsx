@@ -1,5 +1,5 @@
 import React from 'react'
-import ankit from '../../public/123.jpg'
+import ankit from '../assets/123.jpg'
 const Ankit = () => {
     return (
         <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import nitya from '../../public/456.jpg'
+import nitya from '../assets/456.jpg'
 const Nitya = () => {
     return (
         <div>

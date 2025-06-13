@@ -16,11 +16,11 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/ankit-certificate",
+        path: "ankit-certificate",
         element: <Ankit />
       },
       {
-        path: "/nityanand-certificate",
+        path: "nityanand-certificate",
         element: <Nitya />
       }
     ]
