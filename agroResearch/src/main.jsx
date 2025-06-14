@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import Ankit from './components/Ankit.jsx';
 import Nitya from './components/Nitya.jsx';
+import Pdf from './components/Pdf.jsx';
+import NewPdf from './components/NewPdf.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "nityanand-certificate",
         element: <Nitya />
+      },
+      {
+        path: "ankit",
+        element: <NewPdf />
+      },
+      {
+        path: "nityanand",
+        element: <Pdf />
       }
     ]
   },

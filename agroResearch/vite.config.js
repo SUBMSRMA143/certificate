@@ -7,4 +7,7 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  optimizeDeps: {
+    include: ['pdfjs-dist/build/pdf.worker.min.mjs'],
+  },
 })

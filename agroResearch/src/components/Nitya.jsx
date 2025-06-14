@@ -2,7 +2,7 @@ import React from 'react'
 import nitya from '../assets/456.jpg'
 const Nitya = () => {
     return (
-        <div>
+        <div className='container'>
             <img className='ankit' src={nitya} alt="ankit" />
             <h1>Hydroponics Farming certificate</h1>
             <h2>Certified to: Nityanand Kumar Singh</h2>

@@ -7,6 +7,7 @@ function App() {
 
   return (
     <>
+      {/* <h1>chl to rha h</h1> */}
       <Outlet />
     </>
   )
