@@ -21,13 +21,13 @@
     text-align: center;
   }
 
-  .pdf{
+  .pdf {
     width: 70vw;
-    margin-top: -20px;
+    margin-top: 20px;
     /* margin: 0 auto; */
   }
 
-  .pdf-head{
+  .pdf-head {
     position: fixed;
     height: 300px;
     left: 0;
