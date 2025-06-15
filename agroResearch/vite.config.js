@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     historyApiFallback: true,
+    host: '0.0.0.0', // ← This is the key line
+    port: 5173,
   },
   optimizeDeps: {
     include: ['pdfjs-dist/build/pdf.worker.min.mjs'],

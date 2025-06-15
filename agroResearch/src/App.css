@@ -45,10 +45,11 @@
       height: 200px;
     }
   }
+
   @media screen and (max-width: 400px) {
     .pdf {
       width: 100vw;
-      margin-top: 100px;
+      margin-top: 90px;
     }
 
     .pdf-head {
