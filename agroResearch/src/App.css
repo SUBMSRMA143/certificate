@@ -34,3 +34,14 @@
     width: 100vw;
     /* text-align: start; */
   }
+
+  @media screen and (max-width: 500px) {
+    .pdf {
+      width: 100vw;
+      margin-top: 70px;
+    }
+
+    .pdf-head {
+      height: 200px;
+    }
+  }
