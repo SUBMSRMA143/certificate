@@ -11,6 +11,9 @@ import Ankit from './components/Ankit.jsx';
 import Nitya from './components/Nitya.jsx';
 import Pdf from './components/Pdf.jsx';
 import NewPdf from './components/NewPdf.jsx';
+import Ct from './components/Ct.jsx';
+import St from './components/St.jsx';
+import Home from './components/Navbar.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: "nityanand",
         element: <Pdf />
+      },
+      {
+        path: "squares-trainer",
+        element: <St />
+      },
+      {
+        path: "cubes-trainer",
+        element: <Ct />
       }
     ]
   },

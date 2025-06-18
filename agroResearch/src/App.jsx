@@ -1,6 +1,7 @@
 // import { useState } from 'react'
-import './App.css'
-import { Outlet } from 'react-router-dom'
+// import './App.css'
+import { Outlet, Link } from 'react-router-dom'
+import Navbar from './components/Navbar'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -8,9 +9,11 @@ function App() {
   return (
     <>
       {/* <h1>chl to rha h</h1> */}
-      <Outlet />
+      <Navbar />
+      {<Outlet />}
     </>
   )
 }
 
 export default App
+
