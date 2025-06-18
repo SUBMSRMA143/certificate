@@ -7,8 +7,7 @@
 
   color-scheme: light dark;
   color: black;
-  background-color: #ffff
-  ;
+  background-color: #ffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,8 +30,13 @@ h1 {
   line-height: 1.1;
 }
 
-h2{
+h2 {
   margin-top: 5px;
   font-size: 1rem;
   font-weight: 600;
+}
+
+
+.kuchbhi {
+  font-size: 4rem;
 }
