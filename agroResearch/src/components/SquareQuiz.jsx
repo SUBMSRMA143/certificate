@@ -87,6 +87,10 @@ const SquareQuiz = () => {
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
+            <h2 className="text-xl text-gray-500">
+                Question {currentIndex + 1} of {numbers.length}
+            </h2>
+
             <h1 className="text-3xl font-bold">
                 What is the square of <span className="text-5xl text-blue-600">{question}</span>?
             </h1>
@@ -100,32 +104,41 @@ const SquareQuiz = () => {
                 className="p-2 text-xl border border-gray-400 rounded"
             />
 
-            <div className="text-xl font-medium min-h-[28px]">{feedback}</div>
-
-            <button
-                onClick={handleSubmit}
-                disabled={!isSubmitPhase}
-                className={`px-6 py-2 text-white rounded ${!isSubmitPhase
-                    ? 'bg-green-300 cursor-not-allowed'
-                    : 'bg-green-600 hover:bg-green-700'
+            <div
+                className={`text-xl font-semibold min-h-[28px] transition-all duration-300 ${feedback?.startsWith('✅') ? 'text-green-600' : 'text-red-600'
                     }`}
             >
-                Submit
-            </button>
+                {feedback}
+            </div>
 
-            <button
-                ref={nextBtnRef}
-                onClick={handleNext}
-                disabled={isSubmitPhase}
-                className={`px-6 py-2 text-white rounded ${isSubmitPhase
-                    ? 'bg-blue-300 cursor-not-allowed'
-                    : 'bg-blue-600 hover:bg-blue-700'
-                    }`}
-            >
-                Next
-            </button>
+            <div className="flex gap-4">
+                <button
+                    onClick={handleSubmit}
+                    disabled={!isSubmitPhase}
+                    className={`px-6 py-2 text-white rounded ${!isSubmitPhase
+                        ? 'bg-green-300 cursor-not-allowed'
+                        : 'bg-green-600 hover:bg-green-700'
+                        }`}
+                >
+                    Submit
+                </button>
 
-            <div className="text-sm text-gray-500">Time: {liveSeconds}s</div>
+                <button
+                    ref={nextBtnRef}
+                    onClick={handleNext}
+                    disabled={isSubmitPhase}
+                    className={`px-6 py-2 text-white rounded ${isSubmitPhase
+                        ? 'bg-blue-300 cursor-not-allowed'
+                        : 'bg-blue-600 hover:bg-blue-700'
+                        }`}
+                >
+                    Next
+                </button>
+            </div>
+            <div className="px-4 py-2 bg-gray-700 rounded-full text-gray-100 text-m">
+                Time Taken: {liveSeconds}s
+            </div>
+
         </div>
     );
 };
