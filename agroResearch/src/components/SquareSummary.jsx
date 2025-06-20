@@ -19,6 +19,10 @@ const SquareSummary = () => {
         navigate('/');
     };
 
+    // const handleEnter = () => {
+    //     handleRestart();
+    // }
+
     return (
         <div className="min-h-screen w-[100vw] flex flex-col items-center justify-center gap-6 p-4 bg-gray-100">
             <h1 className="text-4xl font-bold">Quiz Summary</h1>
@@ -47,7 +51,9 @@ const SquareSummary = () => {
 
             <button
                 onClick={handleRestart}
-                className="mt-8 px-6 py-3 text-white bg-blue-600 rounded hover:bg-blue-700"
+                // onKeyDown={handleEnter}
+                autoFocus
+                className="mt-8 cursor-pointer px-6 py-3 text-white bg-blue-600 rounded hover:bg-blue-700"
             >
                 Restart Quiz
             </button>
