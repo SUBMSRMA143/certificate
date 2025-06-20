@@ -41,7 +41,7 @@ const SquareStartScreen = () => {
 
     return (
         <div className="min-h-screen w-[100vw] flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
-            <h1 className="text-4xl font-bold">Start Square Training</h1>
+            <h1 className="text-5xl font-medium">Start Square Training</h1>
             <div className="flex gap-4">
                 <div className="flex flex-col gap-2 items-center">
                     <label htmlFor="start-from">From</label>
