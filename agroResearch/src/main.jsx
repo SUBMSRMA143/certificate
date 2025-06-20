@@ -12,8 +12,13 @@ import Nitya from './components/Nitya.jsx';
 import Pdf from './components/Pdf.jsx';
 import NewPdf from './components/NewPdf.jsx';
 import Ct from './components/Ct.jsx';
-import St from './components/St.jsx';
+// import St from './components/St.jsx';
 import Home from './components/Navbar.jsx';
+import SquareStartScreen from './components/SquareStartScreen.jsx';
+import { store } from './store.js'
+import { Provider } from 'react-redux';
+import SquareQuiz from './components/SquareQuiz.jsx';
+import SquareSummary from './components/SquareSummary.jsx';
 
 
 const router = createBrowserRouter([
@@ -39,7 +44,15 @@ const router = createBrowserRouter([
       },
       {
         path: "squares-trainer",
-        element: <St />
+        element: <SquareStartScreen />
+      },
+      {
+        path: "squares-quiz",
+        element: <SquareQuiz />
+      },
+      {
+        path: "squares-quiz/quiz-summary",
+        element: <SquareSummary />
       },
       {
         path: "cubes-trainer",
@@ -51,6 +64,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
+
 )
