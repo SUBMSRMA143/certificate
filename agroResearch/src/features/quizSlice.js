@@ -14,6 +14,7 @@ const initialState = {
     finished: false,
     liveSeconds: 0,
     timerRunning: true,
+    queType: "",
 }
 
 const quizSlice = createSlice({
@@ -35,6 +36,7 @@ const quizSlice = createSlice({
             state.showNext = false;
             state.finished = false;
             state.liveSeconds = 0;
+            // state.queType = action.payload;
         },
         updateInput: (state, action) => {
             state.userInput = action.payload;
@@ -78,6 +80,16 @@ const quizSlice = createSlice({
             state.timerRunning = true;
         },
         resetQuiz: () => initialState,
+        resetQuizRestart: (state, action) => {
+            // const type = state.queType;
+            return {
+                ...initialState,
+                queType: action.payload,
+            }
+        },
+        setQueType: (state, action) => {
+            state.queType = action.payload;
+        }
     },
 });
 
@@ -92,7 +104,9 @@ export const {
     pauseTimer,
     resumeTimer,
     resetQuiz,
+    resetQuizRestart,
     // setShowNext,
+    setQueType,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

@@ -28,3 +28,9 @@ body {
 .kuchbhi {
   font-size: 4rem;
 }
+
+@media screen and (width <=500px) {
+  .kuchbhi{
+    font-size: 2rem;
+  }
+}

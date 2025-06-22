@@ -11,14 +11,12 @@ import Ankit from './components/Ankit.jsx';
 import Nitya from './components/Nitya.jsx';
 import Pdf from './components/Pdf.jsx';
 import NewPdf from './components/NewPdf.jsx';
-import Ct from './components/Ct.jsx';
-// import St from './components/St.jsx';
-import Home from './components/Navbar.jsx';
 import SquareStartScreen from './components/SquareStartScreen.jsx';
 import { store } from './store.js'
 import { Provider } from 'react-redux';
 import SquareQuiz from './components/SquareQuiz.jsx';
 import SquareSummary from './components/SquareSummary.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -43,21 +41,29 @@ const router = createBrowserRouter([
         element: <Pdf />
       },
       {
-        path: "squares-trainer",
+        path: "Squares-trainer",
         element: <SquareStartScreen />
       },
       {
-        path: "squares-quiz",
+        path: "Squares-quiz",
         element: <SquareQuiz />
       },
       {
-        path: "squares-quiz/quiz-summary",
+        path: "Squares-quiz/quiz-summary",
         element: <SquareSummary />
       },
       {
-        path: "cubes-trainer",
-        element: <Ct />
-      }
+        path: "Cubes-trainer",
+        element: <SquareStartScreen />
+      },
+      {
+        path: "Cubes-quiz",
+        element: <SquareQuiz />
+      },
+      {
+        path: "Cubes-quiz/quiz-summary",
+        element: <SquareSummary />
+      },
     ]
   },
 ]);

@@ -18,7 +18,7 @@ const generateShuffledNumbers = (start, end) => {
 
 const SquareStartScreen = () => {
     const start = useSelector((state) => state.quiz.start);
-    const end = useSelector((state) => state.quiz.end);
+    const { end, queType } = useSelector((state) => state.quiz);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const SquareStartScreen = () => {
         if (s >= 1 && s < e) {
             const nums = generateShuffledNumbers(s, e);
             dispatch(startQuiz(nums));
-            navigate('/squares-quiz');
+            navigate(`/${queType}-quiz`);
         }
     }
     const handleKeyDown = (e) => {
@@ -41,9 +41,9 @@ const SquareStartScreen = () => {
 
     return (
         <div className="min-h-screen w-[100vw] flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
-            <h1 className="text-5xl font-medium">Start Square Training</h1>
-            <div className="flex gap-4">
-                <div className="flex flex-col gap-2 items-center">
+            <h1 className="text-5xl text-center font-medium">Start {queType} Training</h1>
+            <div className="sm:flex gap-4">
+                <div className="flex flex-col gap-2 sm:items-center">
                     <label htmlFor="start-from">From</label>
                     <input
                         id="start-from"
@@ -55,7 +55,7 @@ const SquareStartScreen = () => {
                         autoFocus
                     />
                 </div>
-                <div className="flex flex-col gap-2 items-center">
+                <div className="flex flex-col gap-2 mt-2 sm:mt-0 sm:items-center">
                     <label htmlFor="end-to">To</label>
                     <input
                         id="end-to"

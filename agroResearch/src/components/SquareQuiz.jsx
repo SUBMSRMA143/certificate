@@ -26,6 +26,7 @@ const SquareQuiz = () => {
         finished,
         liveSeconds,
         timerRunning,
+        queType
     } = useSelector((state) => state.quiz);
 
     // ⚠️ LOCAL STATE to ensure sync flow with Enter
@@ -51,7 +52,7 @@ const SquareQuiz = () => {
     }, [isSubmitPhase, finished]);
 
     const question = numbers[currentIndex];
-    const expectedAnswer = question * question;
+    const expectedAnswer = queType === "squares" ? question * question : (question * question) * question;
 
     const handleSubmit = () => {
         if (userInput.trim() === '') return;
@@ -70,7 +71,7 @@ const SquareQuiz = () => {
             setIsSubmitPhase(true); // 👈 back to submit phase
         } else {
             dispatch(finishQuiz());
-            navigate("/squares-quiz/quiz-summary");
+            navigate(`/${queType}-quiz/quiz-summary`);
         }
     };
 
@@ -91,8 +92,8 @@ const SquareQuiz = () => {
                 Question {currentIndex + 1} of {numbers.length}
             </h2>
 
-            <h1 className="text-3xl font-bold">
-                What is the square of <span className="text-5xl text-blue-600">{question}</span>?
+            <h1 className="sm:text-3xl text-2xl text-center font-medium">
+                What is the {queType} of <span className="text-5xl text-blue-600">{question}</span>?
             </h1>
 
             <input

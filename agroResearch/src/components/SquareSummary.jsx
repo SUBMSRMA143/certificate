@@ -67,18 +67,18 @@
 
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { resetQuiz } from '../features/quizSlice';
+import { resetQuizRestart } from '../features/quizSlice';
 import { useNavigate } from 'react-router-dom';
 
 const SquareSummary = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { numbers, correct, incorrect, liveSeconds } = useSelector((state) => state.quiz);
+    const { numbers, correct, incorrect, liveSeconds, queType } = useSelector((state) => state.quiz);
 
-    const handleRestart = () => {
-        dispatch(resetQuiz());
-        navigate('/squares-trainer');
+    const handleRestart = (type) => {
+        dispatch(resetQuizRestart(`${type}`));
+        navigate(`/${queType}-trainer`);
     };
 
     const total = numbers.length;
@@ -110,7 +110,7 @@ const SquareSummary = () => {
                 </div>
 
                 <button
-                    onClick={handleRestart}
+                    onClick={() => handleRestart(queType)}
                     autoFocus
                     className="mt-4 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >
@@ -127,8 +127,11 @@ const SquareSummary = () => {
                                     className="bg-red-50 border border-red-300 rounded-lg p-4"
                                 >
                                     <p className="text-xl font-semibold">
-                                        Q: {item.question} × {item.question}
+                                        {queType === "squares"
+                                            ? `${item.question} × ${item.question}`
+                                            : `${item.question} × ${item.question} × ${item.question}`}
                                     </p>
+
                                     <p className="mt-2 text-lg">
                                         ❌ Your Answer: <span className="text-red-600">{item.answer}</span>
                                     </p>
