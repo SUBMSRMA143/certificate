@@ -7,10 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Ankit from './components/Ankit.jsx';
-import Nitya from './components/Nitya.jsx';
-import Pdf from './components/Pdf.jsx';
-import NewPdf from './components/NewPdf.jsx';
+
 import SquareStartScreen from './components/SquareStartScreen.jsx';
 import { store } from './store.js'
 import { Provider } from 'react-redux';
@@ -24,22 +21,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "ankit-certificate",
-        element: <Ankit />
-      },
-      {
-        path: "nityanand-certificate",
-        element: <Nitya />
-      },
-      {
-        path: "ankit",
-        element: <NewPdf />
-      },
-      {
-        path: "nityanand",
-        element: <Pdf />
-      },
       {
         path: "Squares-trainer",
         element: <SquareStartScreen />
