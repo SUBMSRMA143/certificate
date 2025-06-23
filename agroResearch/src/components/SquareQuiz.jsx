@@ -52,7 +52,7 @@ const SquareQuiz = () => {
     }, [isSubmitPhase, finished]);
 
     const question = numbers[currentIndex];
-    const expectedAnswer = queType === "squares" ? question * question : (question * question) * question;
+    const expectedAnswer = queType === "Squares" ? question * question : (question * question) * question;
 
     const handleSubmit = () => {
         if (userInput.trim() === '') return;
@@ -87,7 +87,7 @@ const SquareQuiz = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
+        <div className="sm:min-h-screen mt-40 sm:mt-0 flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
             <h2 className="text-xl text-gray-500">
                 Question {currentIndex + 1} of {numbers.length}
             </h2>

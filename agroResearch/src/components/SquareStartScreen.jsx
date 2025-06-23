@@ -1,7 +1,9 @@
-import React from 'react'
-import { Link, useNavigate } from "react-router-dom"
+import React, { useEffect } from 'react'
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
 import { setRange, startQuiz } from '../features/quizSlice';
+
+
 
 
 const generateShuffledNumbers = (start, end) => {
@@ -21,6 +23,16 @@ const SquareStartScreen = () => {
     const { end, queType } = useSelector((state) => state.quiz);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === "/squares-trainer") {
+            dispatch(setRange({ start: '10', end: '35' }));
+        } else if (location.pathname === "/cubes-trainer") {
+            dispatch(setRange({ start: '1', end: '16' }));
+        }
+    }, [location.pathname, dispatch]);
+
 
     const handleStart = () => {
         const s = parseInt(start);
@@ -40,7 +52,7 @@ const SquareStartScreen = () => {
     }
 
     return (
-        <div className="min-h-screen w-[100vw] flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
+        <div className="sm:min-h-screen mt-40 sm:mt-0 w-[100vw] flex flex-col items-center justify-center gap-10 p-4 bg-gray-100">
             <h1 className="text-5xl text-center font-medium">Start {queType} Training</h1>
             <div className="sm:flex gap-4">
                 <div className="flex flex-col gap-2 sm:items-center">
@@ -63,7 +75,10 @@ const SquareStartScreen = () => {
                         className="p-2 rounded border border-gray-400"
                         value={end}
                         onKeyDown={handleKeyDown}
-                        onChange={(e) => dispatch(setRange({ start, end: e.target.value }))}
+                        onChange={(e) => {
+                            const val = Math.min(Number(e.target.value), queType === 'Squares' ? 35 : 16);
+                            dispatch(setRange({ start, end: val }))
+                        }}
                     />
                 </div>
             </div>

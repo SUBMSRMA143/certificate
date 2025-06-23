@@ -78,7 +78,7 @@ const SquareSummary = () => {
 
     const handleRestart = (type) => {
         dispatch(resetQuizRestart(`${type}`));
-        navigate(`/${queType}-trainer`);
+        navigate(`/${queType.toLowerCase()}-trainer`);
     };
 
     const total = numbers.length;
@@ -87,7 +87,7 @@ const SquareSummary = () => {
     const scorePercent = Math.round((correctCount / total) * 100);
 
     return (
-        <div className="min-h-screen mt-10 flex items-center justify-center bg-gray-100 p-6">
+        <div className="sm:min-h-screen mt-40 sm:mt-10 flex items-center justify-center bg-gray-100 p-6">
             <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-3xl space-y-6 text-center">
                 <h1 className="text-4xl font-bold text-blue-700">✅ Quiz Summary</h1>
 
@@ -127,7 +127,7 @@ const SquareSummary = () => {
                                     className="bg-red-50 border border-red-300 rounded-lg p-4"
                                 >
                                     <p className="text-xl font-semibold">
-                                        {queType === "squares"
+                                        {queType === "Squares"
                                             ? `${item.question} × ${item.question}`
                                             : `${item.question} × ${item.question} × ${item.question}`}
                                     </p>
