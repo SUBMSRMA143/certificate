@@ -87,9 +87,9 @@ const SquareSummary = () => {
     const scorePercent = Math.round((correctCount / total) * 100);
 
     return (
-        <div className="sm:min-h-screen mt-40 sm:mt-10 flex items-center justify-center bg-gray-100 p-6">
+        <div className="sm:min-h-screen mt-20 w-90 absolute left-[50%] translate-x-[-50%] sm:mt-15 flex items-center justify-center bg-gray-100 sm:p-6 ">
             <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-3xl space-y-6 text-center">
-                <h1 className="text-4xl font-bold text-blue-700">✅ Quiz Summary</h1>
+                <h1 className="sm:text-4xl text-3xl font-bold text-blue-700">✅ Quiz Summary</h1>
 
                 <div className="flex justify-center flex-wrap gap-4 text-lg font-medium">
                     <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">
